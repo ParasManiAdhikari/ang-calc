@@ -11,10 +11,12 @@
 
       <!-- Function screen -->
       <div class="w-full py-5 px-6 text-2xl text-white font-thin">
-        Function</div>
+        {{funcT}}</div>
 
       <!-- Result -->
-      <div class="w-full py-5 px-6 text-6xl text-white font-thin">100</div>
+      <div class="w-full py-4 px-6 text-6xl text-white font-thin">
+        {{calValue}}
+      </div>
     </div>
 
     <!-- Buttons -->
@@ -22,18 +24,19 @@
       <!-- first row -->
       <div class="flex w-full">
         <div class="w-2/4 border-r border-b border-zinc-500">
-          <button class="special-button">
+          <button class="special-button" (click)="onClickValue('CE', 'function')"
+          >
             CE
           </button>
         </div>
         <div class="w-1/4 border-r border-b border-zinc-500">
-          <button class="special-button">
+          <button class="special-button" (click)="onClickValue('%', 'function')">
             %
           </button>
         </div>
         <div class="w-1/4 border-b border-zinc-500">
-          <button class="special-button">
-            /
+          <button class="special-button" (click)="onClickValue('/', 'function')">
+            ÷
           </button>
         </div>
       </div>
@@ -41,45 +44,45 @@
     <!-- second row -->
     <div class="flex w-full bg-zinc-700">
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('7', 'number')">
           7
         </button>
       </div>
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('8', 'number')">
           8
         </button>
       </div>
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('9', 'number')">
           9
         </button>
       </div>
       <div class="w-1/4 border-b border-zinc-500 bg-zinc-400">
-        <button class="special-button">
-          ×
+        <button class="special-button" (click)="onClickValue('*', 'function')">
+          *
         </button>
       </div>
     </div>
     <!-- third row -->
     <div class="flex w-full bg-zinc-700">
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('4', 'number')">
           4
         </button>
       </div>
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('5', 'number')">
           5
         </button>
       </div>
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('6', 'number')">
           6
         </button>
       </div>
       <div class="w-1/4 border-b border-zinc-500 bg-zinc-400">
-        <button class="special-button">
+        <button class="special-button" (click)="onClickValue('+', 'function')">
           +
         </button>
       </div>
@@ -87,40 +90,40 @@
     <!-- fourth row -->
     <div class="flex w-full bg-zinc-700">
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('1', 'number')">
           1
         </button>
       </div>
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('2', 'number')">
           2
         </button>
       </div>
       <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+        <button class="normal-button" (click)="onClickValue('3', 'number')">
           3
         </button>
       </div>
       <div class="w-1/4 border-b border-zinc-500 bg-zinc-400">
-        <button class="special-button">
+        <button class="special-button" (click)="onClickValue('-', 'function')">
           -
         </button>
       </div>
     </div>
     <!-- fifth row -->
     <div class="flex w-full bg-zinc-700">
-      <div class="w-2/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+      <div class="w-2/4 border-r border-zinc-500">
+        <button class="normal-button" (click)="onClickValue('0', 'number')">
           0
         </button>
       </div>
-      <div class="w-1/4 border-r border-b border-zinc-500">
-        <button class="normal-button">
+      <div class="w-1/4 border-r border-zinc-500">
+        <button class="normal-button" (click)="onClickValue('.', 'number')">
           .
         </button>
       </div>
-      <div class="w-1/4 border-b border-zinc-500 bg-zinc-400">
-        <button class="special-button">
+      <div class="w-1/4 border-zinc-500 bg-zinc-400">
+        <button class="special-button" (click)="onClickValue('=', 'function')">
           =
         </button>
       </div>
