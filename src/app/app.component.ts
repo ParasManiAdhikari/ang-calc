@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'ang-calc';
 
   calValue: number = 0;
-  funcT: any = '‎ ';
+  funcT: any = '‎';
   calNumber: string = "noValue";
   firstNumber: number = 0;
   secondNumber: number = 0;
@@ -36,15 +36,15 @@ export class AppComponent {
   }
 
   onFunctionClick(val:string){
-    if(val == '‎ '){
+    if(val == 'CE'){
       this.clearAll();
     } 
-    else if(this.funcT == '‎ '){
+    else if(this.funcT == '‎'){
       this.firstNumber = this.calValue;
       this.calNumber = 'noValue';
       this.funcT = val;
     }
-    else if(this.funcT != '‎ '){
+    else if(this.funcT != '‎'){
       this.secondNumber = this.calValue;
       this.valueCalculate(val);
     }
@@ -84,12 +84,15 @@ export class AppComponent {
   onEqualPress(){
     this.firstNumber = 0;
     this.secondNumber = 0;
-    this.funcT = '‎ ';
+    this.funcT = '‎';
     this.calNumber = 'noValue';
   }
 
   clearAll(){
     this.calValue = 0;
-    this.onEqualPress;
+    this.firstNumber = 0;
+    this.secondNumber = 0;
+    this.funcT = '‎';
+    this.calNumber = 'noValue';
   }
 }
