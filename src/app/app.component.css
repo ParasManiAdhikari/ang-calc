@@ -1,0 +1,28 @@
+.normal-button {
+    width: 100%;
+    height: 4rem; /* Adjust height as needed */
+    outline: none;
+    color: white;
+    transition: background-color 0.3s, opacity 0.3s;
+    font-size: 1.25rem; /* Adjust font size as needed */
+    font-weight: bold;
+  }
+
+  .normal-button:hover {
+    background-color: #53565a; /* Adjust hover background color */
+    opacity: 0.8; /* Adjust hover opacity */
+  }
+
+  .special-button {
+    width: 100%;
+    height: 4rem; /* Adjust height as needed */
+    outline: none;
+    transition: background-color 0.3s, opacity 0.3s;
+    font-size: 1.25rem; /* Adjust font size as needed */
+    font-weight: bold;
+  }
+
+  .special-button:hover {
+    background-color: #CBD5E0; /* Adjust hover background color */
+    opacity: 0.8; /* Adjust hover opacity */
+  }
