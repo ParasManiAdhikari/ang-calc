@@ -10,6 +10,7 @@
 
   .normal-button:hover {
     background-color: #53565a; /* Adjust hover background color */
+    font-size: x-large;
     opacity: 0.8; /* Adjust hover opacity */
   }
 
@@ -18,11 +19,12 @@
     height: 4rem; /* Adjust height as needed */
     outline: none;
     transition: background-color 0.3s, opacity 0.3s;
-    font-size: 1.25rem; /* Adjust font size as needed */
+    font-size: 1.35rem; /* Adjust font size as needed */
     font-weight: bold;
   }
 
   .special-button:hover {
     background-color: #CBD5E0; /* Adjust hover background color */
+    font-size: x-large;
     opacity: 0.8; /* Adjust hover opacity */
   }
