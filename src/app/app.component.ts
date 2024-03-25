@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'ang-calc';
 
-  calValue: number = 0;
+  displayNumber: any = 0;
   funcT: any = '‎';
   calNumber: string = "noValue";
   firstNumber: number = 0;
@@ -26,26 +26,34 @@ export class AppComponent {
     }
   }
 
-  onNumberClick(val: string){
-    if(this.calNumber == 'noValue'){
+  onNumberClick(val: string) {
+    if (this.calNumber === 'noValue') {
       this.calNumber = val;
-    } else{
+    } else {
+      // Check if the current value already contains a decimal point
+      if (val === '.' && this.calNumber.includes('.')) {
+        return; // If it does, do nothing
+      }
       this.calNumber = this.calNumber + val;
     }
-    this.calValue = parseInt(this.calNumber);
-  }
+    // Parse float instead of integer to allow decimal values
+    if(val == '.'){
+      this.displayNumber = this.calNumber
+    } else this.displayNumber = parseFloat(this.calNumber);
+}
+
 
   onFunctionClick(val:string){
     if(val == 'CE'){
       this.clearAll();
     } 
     else if(this.funcT == '‎'){
-      this.firstNumber = this.calValue;
+      this.firstNumber = this.displayNumber;
       this.calNumber = 'noValue';
       this.funcT = val;
     }
     else if(this.funcT != '‎'){
-      this.secondNumber = this.calValue;
+      this.secondNumber = this.displayNumber;
       this.valueCalculate(val);
     }
   }
@@ -73,7 +81,7 @@ export class AppComponent {
   }
 
   totalAssignValues(Total: number, val: string){
-    this.calValue = Total;
+    this.displayNumber = Total;
     this.firstNumber = Total;
     this.secondNumber = 0;
     this.calNumber = 'noValue';
@@ -89,7 +97,7 @@ export class AppComponent {
   }
 
   clearAll(){
-    this.calValue = 0;
+    this.displayNumber = 0;
     this.firstNumber = 0;
     this.secondNumber = 0;
     this.funcT = '‎';
